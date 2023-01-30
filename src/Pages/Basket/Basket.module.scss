@@ -39,3 +39,13 @@ display: flex;
 
     }
 }
+.backButtonContainer{
+    border-radius: 25%;
+    transition: all 0.2s ease;
+    position: absolute;
+    top: -5rem;
+    &:hover{
+        transform: translateX(-20px);
+        box-shadow: 0 5px 0 rgb(0, 38, 141);
+    }
+}

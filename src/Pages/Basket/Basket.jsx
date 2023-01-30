@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import classes from "./Basket.module.scss";
-import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
+import { CheckOutlined, CloseOutlined ,DoubleLeftOutlined} from "@ant-design/icons";
 import { CommonConfirm } from "../../Shared/Components/Confirms/CommonConfirm.module";
 import { Button } from "../../Shared/Components/Buttons/CommonButton";
 import { DisplayInfoModal } from "../../Shared/Components/Modals/DisplayInfoModal/DisplayInfoModal";
@@ -20,6 +20,17 @@ export const Basket = () => {
   //recursively collect all the data from the local storage , because we never know the depth
   //all the data inside the localStorage is normalized aka flattened , this is why we increase the counter and use it to get the new data
 
+  const deleteItem = () => {
+    window.localStorage.removeItem(`bet/${activeBet.current.id}`);
+    const updated_count =
+      Number(window.localStorage.getItem("bet_count")) - 1;
+    window.localStorage.setItem("bet_count", updated_count);
+    console.log(activeBet.current, allBets);
+    setAllBets((prev) =>
+      prev.filter((bet) => bet.id !== activeBet.current.id)
+    );
+    setConfirmModal(false);
+}
   useEffect(() => {
     const allBets = [];
     const collectAllBetsFromTheLocalStorage = (count) => {
@@ -36,31 +47,29 @@ export const Basket = () => {
   }, []);
 
   useEffect(() => {
+   
     if (operation?.activeOperation) {
       if (operation.operation === "delete") {
-        window.localStorage.removeItem(`bet/${activeBet.current.id}`);
-        const updated_count =
-          Number(window.localStorage.getItem("bet_count")) - 1;
-        window.localStorage.setItem("bet_count", updated_count);
-        console.log(activeBet.current, allBets);
-        setAllBets((prev) =>
-          prev.filter((bet) => bet.id !== activeBet.current.id)
-        );
-        setConfirmModal(false);
+        deleteItem()
       } else if (operation.operation === "confirm") {
         const randomIndex = Math.round(Math.random() * possibleResults.length);
         console.log(randomIndex);
-        const randomResult = possibleResults[randomIndex];
+        const randomResult = possibleResults[randomIndex -1];
         console.log("RANDOM RESULT : ", randomResult);
         setConfirmModal(false);
         setRandomResult(randomResult);
+        
         window.setTimeout(() => {
           setRandomResult(false);
         }, 3000);
       }
     }
   }, [operation]);
-
+useEffect(()=>{
+    if(randomResult && randomResult === 'success') {
+       deleteItem()
+    }
+},[randomResult])
   return (
     <>
       {randomResult && (
@@ -127,6 +136,10 @@ export const Basket = () => {
       )}
 
       <div className={classes.basketWrapper}>
+        <div className={classes.backButtonContainer} onClick={()=>window.location.assign('http://localhost:3000')}>
+        <DoubleLeftOutlined style ={{fontSize:'3rem' , cursor:'pointer'}}></DoubleLeftOutlined>
+        </div>
+     
         <div className={classes.basketContainer}>
           {allBets &&
             allBets.map((bet, i) => {
