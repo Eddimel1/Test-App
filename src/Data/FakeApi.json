@@ -1,0 +1,122 @@
+{
+  "bettingItems": [
+    [
+      {
+        "type": "info",
+        "category": "Football",
+        "league": "Premier League",
+        "team1": "Manchester United",
+        "team2": "Arsenal"
+      }
+    ],
+    [
+      {
+        "condition": "Match Result",
+        "type": "bet",
+        "coefficient1": "1",
+        "coefficient2": "2",
+        "team1": "Manchester United",
+        "team2": "Arsenal"
+      }
+    ],
+    [
+      {
+        "condition": "First Scores",
+        "type": "bet",
+        "coefficient1": "0.5",
+        "coefficient2": "4",
+        "team1": "Manchester United",
+        "team2": "Arsenal"
+      }
+    ],
+    [
+      {
+        "condition": "Red Card",
+        "type": "bet",
+        "coefficient1": "1",
+        "coefficient2": "0.5",
+        "team1": "Manchester United",
+        "team2": "Arsenal"
+      }
+    ],
+    [
+      {
+        "type": "info",
+        "category": "Football",
+        "league": "Premier League",
+        "team1": "Liverpool",
+        "team2": "Manchester City"
+      }
+    ],
+    [
+      {
+        "condition": "Match Result",
+        "type": "bet",
+        "coefficient1": "6",
+        "coefficient2": "0.8",
+        "team1": "Liverpool",
+        "team2": "Manchester City"
+      }
+    ],
+    [
+      {
+        "condition": "First Scores",
+        "type": "bet",
+        "coefficient1": "2",
+        "coefficient2": "0.9",
+        "team1": "Liverpool",
+        "team2": "Manchester City"
+      }
+    ],
+    [
+      {
+        "condition": "Red Card",
+        "type": "bet",
+        "coefficient1": "1",
+        "coefficient2": "2",
+        "team1": "Liverpool",
+        "team2": "Manchester City"
+      }
+    ],
+    [
+      {
+        "type": "info",
+        "category": "Football",
+        "league": "Premier League",
+        "team1": "Newcastle United",
+        "team2": "Chelsea"
+        
+      }
+    ],
+    [
+      {
+        "condition": "Match Result",
+        "type": "bet",
+        "coefficient1": "2",
+        "coefficient2": "1",
+        "team1": "Newcastle United",
+        "team2": "Chelsea"
+      }
+    ],
+    [
+      {
+        "condition": "First Scores",
+        "type": "bet",
+        "coefficient1": "0.6",
+        "coefficient2": "9",
+        "team1": "Newcastle United",
+        "team2": "Chelsea"
+      }
+    ],
+    [
+      {
+        "condition": "Red Card",
+        "type": "bet",
+        "coefficient1": "5",
+        "coefficient2": "10",
+        "team1": "Newcastle United",
+        "team2": "Chelsea"
+      }
+    ]
+  ]
+}

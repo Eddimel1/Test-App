@@ -1,0 +1,8 @@
+.coefficient {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}

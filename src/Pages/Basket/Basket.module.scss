@@ -1,0 +1,41 @@
+.basketWrapper {
+  padding: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px black;
+  width: 70%;
+  font-weight: 700;
+  text-shadow: 0 0 0.5px rgb(5, 8, 218);
+  filter: sepia(0.1);
+  background: linear-gradient(
+    90deg,
+    rgba(222, 221, 241, 1) 0%,
+    rgba(239, 231, 240, 1) 53%,
+    rgba(215, 247, 245, 1) 100%
+  );
+}
+.betContainer {
+    justify-content: space-between;
+  display: flex;
+}
+.betTitle {
+    font-weight:800;
+    color: rgb(214, 96, 0);
+}
+.basketOperationsContainer{
+display: flex;
+}
+.basketOperation{
+    width: max-content;
+    height: max-content;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0 0 15px black;
+        transform: rotateX(15deg);
+        filter: blur(1.1px) contrast(1.3);
+
+    }
+}

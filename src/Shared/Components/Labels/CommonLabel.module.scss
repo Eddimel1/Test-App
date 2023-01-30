@@ -1,0 +1,8 @@
+.label {
+    font-weight: 700;
+    cursor: pointer;
+    color: rgb(20, 20, 20);
+    &:hover{
+        text-decoration: underline;
+    }
+}

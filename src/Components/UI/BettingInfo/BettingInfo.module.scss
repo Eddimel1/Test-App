@@ -1,0 +1,19 @@
+.bettingInfoCenter{
+    width: max-content;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    flex-direction: column;
+    
+
+}
+
+.score {
+ margin-left: 0.5rem;
+}
+.currentTime {
+    display: flex;
+width: max-content;
+}
+.currentTimeCounter {
+    margin-left: 0.5rem;
+}
